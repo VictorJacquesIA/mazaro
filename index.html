@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="./assets/icons/1.png" />
+  <link rel="apple-touch-icon" href="./assets/icons/1.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F8F4EE" />
+
+  <!-- ══ SEO ══════════════════════════════════════════════════════════════ -->
+  <title>Mazaro — Bolsas Femininas | Boutique Digital · Imbituba, SC</title>
+  <meta name="description" content="Bolsas femininas com design sofisticado e preço acessível. Escolhidas com critério para a sua rotina real. Entrega para todo o Brasil." />
+  <meta name="keywords" content="bolsas femininas, bolsas sofisticadas, boutique digital, bolsas acessíveis, bolsas trabalho, bolsas dia a dia, Imbituba, Santa Catarina" />
+  <meta name="author" content="Mazaro" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://usemazaro.com.br/" />
+
+  <!-- ══ Open Graph ════════════════════════════════════════════════════════ -->
+  <meta property="og:title" content="Mazaro — Bolsas Femininas" />
+  <meta property="og:description" content="Bolsas femininas escolhidas com critério. Elegância acessível para a sua rotina real." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://usemazaro.com.br/" />
+  <meta property="og:image" content="https://usemazaro.com.br/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Mazaro" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- ══ Twitter Card ══════════════════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mazaro — Bolsas Femininas" />
+  <meta name="twitter:description" content="Bolsas femininas escolhidas com critério. Elegância acessível para a sua rotina real." />
+  <meta name="twitter:image" content="https://usemazaro.com.br/assets/images/og-image.jpg" />
+
+  <!-- ══ Schema.org ════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Mazaro",
+    "description": "Boutique digital de bolsas femininas com design sofisticado e preço acessível.",
+    "url": "https://usemazaro.com.br",
+    "telephone": "+55-48-99147-2902",
+    "email": "mazarobolsas@gmail.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Projetada 06, Sala 307",
+      "addressLocality": "Imbituba",
+      "addressRegion": "SC",
+      "postalCode": "88780-000",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/mazaro.bolsas/"
+    ]
+  }
+  </script>
+
+  <!-- ══ Meta Pixel ════════════════════════════════════════════════════════ -->
+  <!-- {TODO: inserir o ID do Pixel em VITE_META_PIXEL_ID no arquivo .env} -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.__META_PIXEL_ID = '__VITE_META_PIXEL_ID__';
+    if (window.__META_PIXEL_ID && window.__META_PIXEL_ID !== '__VITE_META_PIXEL_ID__') {
+      fbq('init', window.__META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+  </script>
+  <!-- ══ Google Analytics 4 ════════════════════════════════════════════════ -->
+  <!-- {TODO: inserir o ID do GA4 em VITE_GA_MEASUREMENT_ID no arquivo .env — Ex: G-XXXXXXXXXX} -->
+  <script>
+    window.__GA_ID = '__VITE_GA_MEASUREMENT_ID__';
+    if (window.__GA_ID && window.__GA_ID !== '__VITE_GA_MEASUREMENT_ID__') {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.__GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', window.__GA_ID);
+    }
+  </script>
+
+  <!-- ══ Fontes ════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Manrope:wght@400;600&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ══ CSS ═══════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/variables.css" />
+  <link rel="stylesheet" href="./styles/utilities.css" />
+  <link rel="stylesheet" href="./styles/cinematic.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/hero.css" />
+  <link rel="stylesheet" href="./styles/sections.css" />
+  <link rel="stylesheet" href="./styles/animations.css" />
+  <link rel="stylesheet" href="./styles/responsive.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+</head>
+<body>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=__VITE_META_PIXEL_ID__&ev=PageView&noscript=1" /></noscript>
+
+  <div data-cursor-glow aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="header__nav" aria-label="Navegação principal">
+
+        <a href="#" class="header__logo" aria-label="Mazaro — início">
+          <img src="./assets/icons/logo.png" alt="Mazaro" class="header__logo-img" width="120" height="40" />
+        </a>
+
+        <ul class="header__links" role="list">
+          <li><a href="#vitrine" class="header__link">Bolsas</a></li>
+          <li><a href="#vitrine" class="header__link">Coleções</a></li>
+          <li><a href="#sobre" class="header__link">Sobre</a></li>
+          <li>
+            <a href="#whatsapp" class="header__link header__link--whatsapp" aria-label="Falar pelo WhatsApp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+
+        <a href="#ecommerce" class="btn btn--primary header__cta" data-magnetic>
+          Escolher minha bolsa
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════════ -->
+    <section class="hero section" id="hero" aria-label="Apresentação">
+      <div class="aurora" aria-hidden="true">
+        <div class="aurora__orb aurora__orb--1"></div>
+        <div class="aurora__orb aurora__orb--2"></div>
+      </div>
+
+      <div class="container hero__container">
+
+        <div class="hero__content" data-scene>
+
+          <h1 class="hero__title text-display" data-scene-element>
+            Existe um momento antes de sair de casa em que tudo precisa estar perfeito.
+          </h1>
+
+          <p class="hero__subtitle text-body" data-scene-element>
+            A Mazaro nasceu para esse momento. Bolsas femininas selecionadas cuidadosamente,
+            para mulheres que sabem quem são e escolhem cada detalhe com intenção!
+          </p>
+
+          <div class="hero__actions" data-scene-element>
+            <a href="#ecommerce" class="btn btn--primary hero__cta" data-magnetic>
+              Escolher minha bolsa
+            </a>
+            <a href="#vitrine" class="btn btn--secondary">
+              Conhecer a coleção
+            </a>
+          </div>
+
+          <span class="hero__badge badge" data-scene-element>
+            Boutique digital · Imbituba, SC · Brasil
+          </span>
+
+        </div>
+
+        <div class="hero__image" data-scene-element>
+          <img
+            src="./assets/images/hero.png"
+            alt="Mazaro — boutique digital de bolsas femininas"
+            class="hero__img"
+            width="800"
+            height="600"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         VITRINE DE PRODUTOS
+    ══════════════════════════════════════════════ -->
+    <section class="section section--vitrine" id="vitrine" data-scene aria-label="Vitrine de produtos">
+      <div class="container">
+
+        <p class="section-label" data-scene-element>Coleção atual</p>
+        <h2 class="text-h1" data-scene-element>
+          Encontre a bolsa <em>certa para você.</em>
+        </h2>
+        <p class="text-body" data-scene-element style="max-width:560px;margin-top:var(--space-4)">
+          Cada modelo foi escolhido com um propósito. Nenhum está aqui por acaso.
+        </p>
+
+        <div class="vitrine__grid" id="vitrine-grid" data-scene-element></div>
+
+        <script type="module">
+          import { getProducts } from './js/products.js'
+          const grid = document.getElementById('vitrine-grid')
+          getProducts().forEach(p => {
+            grid.innerHTML += `
+              <article class="product-card" data-scene-element>
+                <div class="product-card__image-wrap">
+                  <img src="${p.img}" alt="${p.alt}" loading="lazy" width="400" height="500" />
+                  <span class="tag product-card__tag">${p.tag}</span>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="text-h3">${p.title}</h3>
+                  <p class="text-sm">${p.desc}</p>
+                  <a href="${p.link}" class="btn btn--secondary product-card__cta" target="_blank" rel="noopener noreferrer">Ver no site</a>
+                </div>
+              </article>`
+          })
+        </script>
+
+        <div class="vitrine__cta-wrap" data-scene-element>
+          <a href="#ecommerce" class="btn btn--primary" data-magnetic>
+            Ver toda a coleção
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         PROPOSTA DE VALOR — 3 pilares
+    ══════════════════════════════════════════════ -->
+    <section class="section section--value" id="valor" data-scene aria-label="Proposta de valor">
+      <div class="container">
+
+        <p class="section-label" data-scene-element>Nossa proposta</p>
+        <h2 class="text-h1" data-scene-element>
+          Por que escolher <em>a Mazaro?</em>
+        </h2>
+        <div class="value-carousel" aria-label="Carrossel de pilares" data-scene-element>
+        <div class="value__grid value-carousel__track">
+
+          <article class="value__card glass-card">
+            <div class="value__icon" aria-hidden="true">
+              <!-- Compass: orientação, confiança na escolha -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            </div>
+            <h3 class="text-h3">Sem Medo de Errar.</h3>
+            <p class="text-body">
+              Tamanho, cor, ocasião — a gente te ajuda a escolher certo antes de você decidir.
+            </p>
+          </article>
+
+          <article class="value__card glass-card">
+            <div class="value__icon" aria-hidden="true">
+              <!-- Diamond: valor refinado e acessível -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="12" y1="22" x2="6" y2="3"/><line x1="12" y1="22" x2="18" y2="3"/></svg>
+            </div>
+            <h3 class="text-h3">Preço que Faz Sentido.</h3>
+            <p class="text-body">
+              Elegância não é privilégio. É escolha. E aqui ela cabe no seu orçamento.
+            </p>
+          </article>
+
+          <article class="value__card glass-card">
+            <div class="value__icon" aria-hidden="true">
+              <!-- Star: curadoria, seleção especial -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="text-h3">Selecionada para Você.</h3>
+            <p class="text-body">
+              Não é catálogo, é curadoria. Cada modelo foi escolhido porque combina com a rotina real de mulheres reais.
+            </p>
+          </article>
+
+        </div>
+        <div class="value-carousel__dots" aria-hidden="true">
+          <span class="value-carousel__dot is-active"></span>
+          <span class="value-carousel__dot"></span>
+          <span class="value-carousel__dot"></span>
+        </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         COMO ESCOLHER — consultivo (desativado)
+    ══════════════════════════════════════════════ -->
+    <!--
+    <section class="section section--guide" id="como-escolher" data-scene aria-label="Como escolher sua bolsa">
+      <div class="container">
+
+        <p class="section-label" data-scene-element>Ocasiões de uso</p>
+        <h2 class="text-h1" data-scene-element>
+          Como você quer se <em>apresentar hoje?</em>
+        </h2>
+        <p class="text-body guide__intro" data-scene-element>
+          A bolsa certa muda o dia. Encontre a sua pelo momento que você vive.
+        </p>
+
+        <div class="guide__grid" data-scene-element>
+
+          <article class="guide__item glass-card" data-scene-element>
+            <span class="tag">Corporativo</span>
+            <h3 class="text-h3">Ambiente de trabalho & Reuniões</h3>
+            <p class="text-body">
+              Para os dias em que você precisa chegar, sentar e já ser levada a sério.
+            </p>
+          </article>
+
+          <article class="guide__item glass-card" data-scene-element>
+            <span class="tag">Casual</span>
+            <h3 class="text-h3">Almoços, Viagens & Finais de Semana</h3>
+            <p class="text-body">
+              Quando o look precisa ser bonito e a bolsa precisa acompanhar cada passo.
+            </p>
+          </article>
+
+          <article class="guide__item glass-card" data-scene-element>
+            <span class="tag">Especial</span>
+            <h3 class="text-h3">Jantares, Eventos & Ocasiões Especiais</h3>
+            <p class="text-body">
+              O detalhe que transforma uma produção simples em algo que ninguém esquece.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+    -->
+
+    <!-- ══════════════════════════════════════════════
+         SOBRE A MAZARO
+    ══════════════════════════════════════════════ -->
+    <section class="section section--about" id="sobre" data-scene aria-label="Sobre a Mazaro">
+      <div class="container about__container">
+
+        <div class="about__text" data-scene-element>
+          <p class="section-label">Nossa história</p>
+          <h2 class="text-h1" data-text-reveal>
+            O propósito <em>não mudou.</em>
+          </h2>
+          <p class="text-body about__manifesto">
+            Antes da Mazaro, passei anos na área da beleza — cuidando de cílios,
+            sobrancelhas e, acima de tudo, da autoestima de cada mulher que entrava no meu studio.
+          </p>
+          <p class="text-body">
+            Eu sei o que acontece quando uma mulher se olha no espelho e gosta do que vê.
+            Sei o quanto um detalhe muda a postura, o passo, a confiança.
+          </p>
+          <p class="text-body">
+            Quando saí da área da beleza, o sentimento não foi embora.
+          </p>
+          <p class="text-body">
+            A Mazaro nasceu disso — da certeza de que transformar mulheres não é um trabalho,
+            é um propósito. Só mudou o detalhe: saiu a pinça, entrou a bolsa.
+          </p>
+          <p class="text-body">
+            Não somos uma loja comum. Não jogo produto na vitrine e espero.
+            Seleciono cada peça pensando em você — na sua rotina, no seu look, na sua vida real.
+          </p>
+          <p class="text-body">
+            Porque elegância acessível não é tendência. É o que sempre acreditei.
+          </p>
+          <p class="text-body about__signature">
+            — Marjana, fundadora da Mazaro
+          </p>
+        </div>
+
+        <div class="about__image" data-scene-element>
+          <img
+            src="./assets/images/marjana.jpg"
+            alt="Marjana, fundadora da Mazaro"
+            class="about__img"
+            width="600"
+            height="750"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         FEED INSTAGRAM
+    ══════════════════════════════════════════════ -->
+    <section class="section section--trust" id="instagram" data-scene aria-label="Instagram Mazaro">
+      <div class="container">
+
+        <p class="section-label" data-scene-element>@mazaro.bolsas</p>
+        <h2 class="text-h1" data-scene-element>
+          A Mazaro <em>no Instagram.</em>
+        </h2>
+
+        <div class="instagram-feed" data-scene-element>
+          <behold-widget feed-id="axtVkMgCT7R9LgIrHDgf"></behold-widget>
+          <script>
+            (() => {
+              const d=document,s=d.createElement("script");s.type="module";
+              s.src="https://w.behold.so/widget.js";d.head.append(s);
+            })();
+          </script>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         CTA FINAL
+    ══════════════════════════════════════════════ -->
+    <section class="section section--cta-final" id="ecommerce" data-scene aria-label="Ir para a loja">
+      <div class="aurora" aria-hidden="true">
+        <div class="aurora__orb aurora__orb--1"></div>
+        <div class="aurora__orb aurora__orb--2"></div>
+      </div>
+
+      <div class="container cta-final__container">
+
+        <p class="section-label" data-scene-element>SUA VEZ</p>
+        <h2 class="text-h1 cta-final__title" data-text-reveal data-scene-element>
+          A bolsa certa para você <em>está aqui.</em>
+        </h2>
+
+        <p class="text-body cta-final__subtitle" data-scene-element>
+          Escolha com segurança. Use com confiança. Todos os dias.
+        </p>
+
+        <div class="cta-final__actions" data-scene-element>
+          <a href="#ecommerce" class="btn btn--primary" data-magnetic>
+            Quero escolher minha bolsa
+          </a>
+          <a href="#whatsapp" class="btn btn--secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Falar com uma consultora
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" id="footer" aria-label="Rodapé">
+    <div class="container footer__container">
+
+      <div class="footer__brand">
+        <a href="#" class="footer__logo" aria-label="Mazaro — início">
+          <img src="./assets/icons/logo.png" alt="Mazaro" class="footer__logo-img" width="110" height="36" />
+        </a>
+        <p class="text-sm footer__tagline">
+          Mazaro · Elegância acessível, todos os dias.
+        </p>
+      </div>
+
+      <nav class="footer__social" aria-label="Redes sociais">
+        <a href="https://www.instagram.com/mazaro.bolsas/" class="footer__social-link" aria-label="Instagram da Mazaro" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a href="#whatsapp" class="footer__social-link" aria-label="WhatsApp da Mazaro" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+      </nav>
+
+      <div class="footer__store">
+        <p class="text-sm">Loja oficial:</p>
+        <a href="#ecommerce" class="footer__store-link" target="_blank" rel="noopener noreferrer">
+          InfinitePay · Mazaro
+        </a>
+      </div>
+
+      <p class="footer__copy text-sm">
+        © 2026 Mazaro. Todos os direitos reservados. · Boutique digital · Imbituba, SC · Brasil
+        · <a href="./politica-de-trocas.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Política de Trocas e Devoluções</a>
+        · <a href="./politica-de-privacidade.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Política de Privacidade</a>
+        · <a href="./termos-de-uso.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Termos de Uso</a>
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a
+    href="#whatsapp"
+    class="whatsapp-float"
+    id="whatsapp"
+    aria-label="Falar com a Mazaro pelo WhatsApp"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+    <span class="sr-only">WhatsApp</span>
+  </a>
+
+  <script type="module" src="./js/main.js"></script>
+
+</body>
+</html>

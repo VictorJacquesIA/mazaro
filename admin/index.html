@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Mazaro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/reset.css" />
+  <link rel="stylesheet" href="../styles/variables.css" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-ui);
+      background: var(--color-bg-secondary);
+      color: var(--color-text-primary);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    /* ── Login ── */
+    #login-screen {
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-bg-border);
+      border-radius: 20px;
+      padding: 3rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(59,42,34,0.10);
+    }
+
+    #login-screen h1 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    #login-screen p {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    #login-screen input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--color-bg-border);
+      border-radius: 10px;
+      background: var(--color-bg-primary);
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      color: var(--color-text-primary);
+      margin-bottom: 1rem;
+      outline: none;
+      transition: border-color 200ms;
+    }
+
+    #login-screen input:focus {
+      border-color: var(--color-accent);
+    }
+
+    .error-msg {
+      color: var(--color-error);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    /* ── Admin ── */
+    #admin-screen {
+      display: none;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .admin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .admin-header h1 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .admin-header p {
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    /* ── Cards ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+
+    .product-form {
+      background: var(--color-bg-elevated);
+      border: 1px solid var(--color-bg-border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(59,42,34,0.06);
+    }
+
+    .product-preview {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--color-bg-secondary);
+    }
+
+    .product-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-preview .preview-number {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background: rgba(59,42,34,0.7);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.625rem;
+      border-radius: 999px;
+    }
+
+    .product-fields {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .field label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-secondary);
+    }
+
+    .field input,
+    .field textarea {
+      padding: 0.625rem 0.75rem;
+      border: 1px solid var(--color-bg-border);
+      border-radius: 8px;
+      background: var(--color-bg-primary);
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      color: var(--color-text-primary);
+      outline: none;
+      transition: border-color 200ms;
+      width: 100%;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--color-accent);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    /* ── Botões ── */
+    .btn-primary {
+      background: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 1.75rem;
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 200ms, transform 150ms;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text-secondary);
+      border: 1px solid var(--color-bg-border);
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: border-color 200ms, color 200ms;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-text-secondary);
+      color: var(--color-text-primary);
+    }
+
+    .btn-danger {
+      background: transparent;
+      color: var(--color-error);
+      border: 1px solid var(--color-error);
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 200ms;
+    }
+
+    .btn-danger:hover {
+      background: rgba(110,47,54,0.08);
+    }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--color-text-primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: transform 300ms, opacity 300ms;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .logout-btn {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      font-family: var(--font-ui);
+    }
+
+    /* ── Upload ── */
+    .upload-area {
+      border: 2px dashed var(--color-bg-border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 200ms, background 200ms;
+      position: relative;
+    }
+
+    .upload-area:hover {
+      border-color: var(--color-accent);
+      background: var(--color-accent-muted);
+    }
+
+    .upload-area input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .upload-area span {
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      pointer-events: none;
+    }
+
+    .upload-status {
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      margin-top: 0.25rem;
+      min-height: 1rem;
+    }
+
+    .upload-status.error {
+      color: var(--color-error);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div id="login-screen">
+    <h1>Mazaro</h1>
+    <p>Painel administrativo</p>
+    <input type="password" id="password-input" placeholder="Senha" />
+    <p class="error-msg" id="error-msg">Senha incorreta.</p>
+    <button class="btn-primary" onclick="doLogin()" style="width:100%">Entrar</button>
+  </div>
+
+  <!-- ADMIN -->
+  <div id="admin-screen">
+    <div class="admin-header">
+      <div>
+        <h1>Vitrine de Produtos</h1>
+        <p>Edite as fotos e links. Use <strong>Sincronizar textos</strong> para atualizar nomes e descrições sem perder as imagens salvas.</p>
+      </div>
+      <div class="admin-actions">
+        <button class="btn-danger" onclick="doReset()">Resetar padrão</button>
+        <button class="btn-secondary" onclick="doSyncTexts()">Sincronizar textos</button>
+        <button class="btn-primary" onclick="doSave()">Salvar alterações</button>
+      </div>
+    </div>
+
+    <div class="products-grid" id="products-grid"></div>
+
+    <div style="text-align:center">
+      <a href="../index.html" target="_blank" class="btn-secondary" style="display:inline-block;text-decoration:none;padding:0.75rem 1.5rem">
+        Ver site →
+      </a>
+      &nbsp;
+      <button class="logout-btn" onclick="doLogout()">Sair</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { DEFAULT_PRODUCTS, getProducts, saveProducts, resetProducts } from '../js/products.js'
+    import { uploadImagem } from '../js/supabase.js'
+
+    const SENHA = 'Gruporio@12'
+    let products = []
+
+    // ── Auth ──
+    window.doLogin = function() {
+      const val = document.getElementById('password-input').value
+      if (val === SENHA) {
+        sessionStorage.setItem('mazaro_auth', '1')
+        showAdmin()
+      } else {
+        document.getElementById('error-msg').style.display = 'block'
+      }
+    }
+
+    document.getElementById('password-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') window.doLogin()
+    })
+
+    window.doLogout = function() {
+      sessionStorage.removeItem('mazaro_auth')
+      document.getElementById('login-screen').style.display = 'flex'
+      document.getElementById('admin-screen').style.display = 'none'
+    }
+
+    function showAdmin() {
+      document.getElementById('login-screen').style.display = 'none'
+      document.getElementById('admin-screen').style.display = 'block'
+      products = getProducts()
+      renderForms()
+    }
+
+    if (sessionStorage.getItem('mazaro_auth') === '1') showAdmin()
+
+    // ── Render forms ──
+    function renderForms() {
+      const grid = document.getElementById('products-grid')
+      grid.innerHTML = ''
+      products.forEach((p, i) => {
+        grid.innerHTML += `
+          <div class="product-form">
+            <div class="product-preview">
+              <img id="preview-img-${i}" src="${p.img}" alt="${p.title}" onerror="this.style.opacity=0.3" />
+              <span class="preview-number">Produto ${i + 1}</span>
+            </div>
+            <div class="product-fields">
+              <div class="field">
+                <label>Foto do Produto</label>
+                <div class="upload-area">
+                  <input type="file" accept="image/*" onchange="handleUpload(event, ${i})" />
+                  <span>📁 Clique para escolher uma imagem</span>
+                </div>
+                <p class="upload-status" id="status-${i}"></p>
+              </div>
+              <div class="field">
+                <label>Tag</label>
+                <input type="text" id="tag-${i}" value="${p.tag}" placeholder="Ex: Trabalho, Noite..." />
+              </div>
+              <div class="field">
+                <label>Nome do Produto</label>
+                <input type="text" id="title-${i}" value="${p.title}" />
+              </div>
+              <div class="field">
+                <label>Descrição</label>
+                <textarea id="desc-${i}">${p.desc}</textarea>
+              </div>
+              <div class="field">
+                <label>Link do Produto</label>
+                <input type="text" id="link-${i}" value="${p.link}" placeholder="https://..." />
+              </div>
+            </div>
+          </div>`
+      })
+    }
+
+    // ── Upload para Supabase ──
+    window.handleUpload = async function(event, i) {
+      const file = event.target.files[0]
+      if (!file) return
+
+      const status = document.getElementById(`status-${i}`)
+      status.className = 'upload-status'
+      status.textContent = 'Enviando...'
+
+      try {
+        const url = await uploadImagem(file, products[i].id)
+        products[i].img = url
+        document.getElementById(`preview-img-${i}`).src = url
+        status.textContent = '✓ Imagem enviada com sucesso'
+      } catch (err) {
+        status.className = 'upload-status error'
+        status.textContent = '✗ Erro ao enviar: ' + err.message
+      }
+    }
+
+    // ── Salvar ──
+    window.doSave = function() {
+      products = products.map((p, i) => ({
+        ...p,
+        tag: document.getElementById(`tag-${i}`).value.trim(),
+        title: document.getElementById(`title-${i}`).value.trim(),
+        desc: document.getElementById(`desc-${i}`).value.trim(),
+        link: document.getElementById(`link-${i}`).value.trim(),
+        alt: document.getElementById(`title-${i}`).value.trim() + ' — Mazaro'
+      }))
+      saveProducts(products)
+      showToast('Alterações salvas!')
+    }
+
+    // ── Resetar ──
+    window.doReset = function() {
+      if (!confirm('Resetar para os produtos padrão? Imagens e links salvos serão perdidos.')) return
+      resetProducts()
+      products = [...DEFAULT_PRODUCTS]
+      renderForms()
+      showToast('Resetado para o padrão.')
+    }
+
+    // ── Sincronizar textos — mantém img e link, atualiza title/tag/desc ──
+    window.doSyncTexts = function() {
+      if (!confirm('Atualizar nomes, tags e descrições com os textos mais recentes? Imagens e links salvos serão mantidos.')) return
+      products = products.map((p, i) => {
+        const def = DEFAULT_PRODUCTS[i]
+        return def ? { ...p, title: def.title, tag: def.tag, desc: def.desc, alt: def.alt } : p
+      })
+      saveProducts(products)
+      renderForms()
+      showToast('Textos sincronizados com sucesso!')
+    }
+
+    // ── Toast ──
+    function showToast(msg) {
+      const t = document.getElementById('toast')
+      t.textContent = msg
+      t.classList.add('show')
+      setTimeout(() => t.classList.remove('show'), 2500)
+    }
+  </script>
+
+</body>
+</html>

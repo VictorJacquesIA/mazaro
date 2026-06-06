@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Política de Trocas e Devoluções — Mazaro Bolsas" />
+  <title>Política de Trocas e Devoluções — Mazaro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/variables.css" />
+  <link rel="stylesheet" href="./styles/utilities.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+
+  <style>
+    body {
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-family: var(--font-ui);
+    }
+
+    .politica {
+      padding-block-start: 140px;
+      padding-block-end: var(--space-24);
+    }
+
+    .politica__container {
+      max-width: 760px;
+      margin-inline: auto;
+      padding-inline: var(--space-6);
+    }
+
+    .politica__label {
+      font-family: var(--font-ui);
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+
+    .politica__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-tight);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-12);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--color-bg-border);
+    }
+
+    .politica__secao {
+      margin-bottom: var(--space-10);
+    }
+
+    .politica__secao-titulo {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__texto {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__lista {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__lista li {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-secondary);
+      padding-left: var(--space-5);
+      position: relative;
+    }
+
+    .politica__lista li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .politica__divisor {
+      border: none;
+      border-top: 1px solid var(--color-bg-border);
+      margin-block: var(--space-8);
+    }
+
+    .politica__destaque {
+      background: var(--color-accent-muted);
+      border: 1px solid var(--color-accent-glow);
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-6);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__destaque p {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-primary);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .politica__whatsapp {
+      color: var(--color-accent);
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+    }
+
+    .politica__whatsapp:hover {
+      text-decoration: underline;
+    }
+
+    .politica__subsecao-titulo {
+      font-family: var(--font-ui);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-2);
+    }
+
+    .politica__voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-ui);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      margin-bottom: var(--space-8);
+      transition: color var(--duration-base) var(--ease-out);
+    }
+
+    .politica__voltar:hover {
+      color: var(--color-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="header__nav" aria-label="Navegação principal">
+        <a href="./index.html" class="header__logo" aria-label="Mazaro — início">
+          <img src="./assets/icons/logo.png" alt="Mazaro" class="header__logo-img" width="120" height="40" />
+        </a>
+        <a href="./index.html" class="btn btn--primary header__cta" data-magnetic>
+          Voltar à loja
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="politica">
+      <div class="politica__container">
+
+        <a href="./index.html" class="politica__voltar">
+          ← Voltar
+        </a>
+
+        <span class="politica__label">Mazaro Bolsas</span>
+        <h1 class="politica__titulo">Política de Trocas e Devoluções</h1>
+
+        <p class="politica__texto">
+          Para garantir uma experiência transparente e segura, nossa política de trocas e devoluções
+          segue o Código de Defesa do Consumidor Brasileiro.
+        </p>
+
+        <hr class="politica__divisor" />
+
+        <!-- 1 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">1. Direito de Arrependimento</h2>
+          <p class="politica__texto">
+            Conforme o artigo 49 do Código de Defesa do Consumidor, compras realizadas online
+            podem ser canceladas em até 7 (sete) dias corridos após o recebimento do pedido.
+          </p>
+          <p class="politica__texto">Para solicitar a devolução, entre em contato pelo nosso WhatsApp oficial:</p>
+          <div class="politica__destaque">
+            <p>WhatsApp Mazaro: <a href="https://wa.me/5548991472902" class="politica__whatsapp" target="_blank" rel="noopener noreferrer">+55 48 99147-2902</a></p>
+          </div>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 2 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">2. Condições para Aprovação da Devolução</h2>
+          <p class="politica__texto">
+            Para preservar a integridade da experiência Mazaro, os produtos devolvidos passarão por análise.
+            A devolução somente será aprovada caso a bolsa:
+          </p>
+          <ul class="politica__lista">
+            <li>esteja sem sinais de uso;</li>
+            <li>esteja sem odores, manchas ou avarias;</li>
+            <li>esteja com etiquetas e acessórios originais;</li>
+            <li>seja enviada na embalagem original Mazaro;</li>
+            <li>esteja em perfeito estado de conservação.</li>
+          </ul>
+          <p class="politica__texto">
+            Produtos enviados fora dessas condições poderão ser recusados e reenviados à cliente.
+          </p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 3 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">3. Prazo para Envio da Devolução</h2>
+          <p class="politica__texto">
+            Após a aprovação da solicitação pela equipe Mazaro, a cliente terá o prazo de
+            5 (cinco) dias úteis para realizar a postagem do produto.
+          </p>
+          <p class="politica__texto">
+            Caso a postagem não ocorra dentro do prazo informado, a solicitação poderá ser cancelada.
+          </p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 4 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">4. Custos de Frete</h2>
+          <p class="politica__subsecao-titulo">4.1 Devoluções por arrependimento ou preferência pessoal</p>
+          <p class="politica__texto">
+            Nos casos em que a cliente deseja devolver o produto por arrependimento, escolha de modelo,
+            cor, tamanho ou preferência pessoal, o custo do frete de devolução será de responsabilidade da cliente.
+          </p>
+          <p class="politica__subsecao-titulo">4.2 Produto com defeito ou divergência</p>
+          <p class="politica__texto">
+            Caso o produto apresente defeito de fabricação ou divergência em relação ao pedido realizado,
+            os custos de envio serão assumidos pela Mazaro.
+          </p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 5 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">5. Produtos com Defeito</h2>
+          <p class="politica__texto">
+            Produtos considerados duráveis possuem garantia legal de até 90 (noventa) dias,
+            conforme previsto no Código de Defesa do Consumidor.
+          </p>
+          <p class="politica__texto">
+            Caso seja identificado defeito de fabricação, entre em contato pelo WhatsApp oficial
+            da Mazaro, enviando:
+          </p>
+          <ul class="politica__lista">
+            <li>número do pedido;</li>
+            <li>fotos ou vídeos do produto;</li>
+            <li>descrição do ocorrido.</li>
+          </ul>
+          <p class="politica__texto">Após análise, a Mazaro poderá realizar:</p>
+          <ul class="politica__lista">
+            <li>concessão de crédito na loja;</li>
+            <li>reembolso do valor pago;</li>
+            <li>ou outra solução adequada conforme o caso.</li>
+          </ul>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 6 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">6. Análise do Produto</h2>
+          <p class="politica__texto">
+            Após o recebimento da devolução em nosso centro logístico, a Mazaro realizará uma
+            análise do produto em até 15 (quinze) dias úteis. A aprovação dependerá do cumprimento
+            das condições descritas nesta política.
+          </p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 7 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">7. Crédito na Loja</h2>
+          <p class="politica__texto">
+            A Mazaro realiza 1 (uma) concessão de crédito por pedido, válida para utilização
+            em uma nova compra no site. O crédito:
+          </p>
+          <ul class="politica__lista">
+            <li>será disponibilizado após aprovação da análise;</li>
+            <li>poderá ser utilizado em qualquer produto disponível;</li>
+            <li>terá validade informada no momento da liberação.</li>
+          </ul>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 8 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">8. Reembolsos</h2>
+          <p class="politica__texto">
+            Quando aplicável, o reembolso será realizado conforme a forma de pagamento utilizada no pedido:
+          </p>
+          <ul class="politica__lista">
+            <li>PIX: devolução via transferência bancária;</li>
+            <li>Cartão de crédito: estorno solicitado junto à operadora do cartão;</li>
+            <li>Crédito Mazaro: quando escolhido pela cliente.</li>
+          </ul>
+          <p class="politica__texto">
+            Os prazos de compensação podem variar conforme a instituição financeira ou administradora do cartão.
+          </p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 9 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">9. Recusa de Solicitações</h2>
+          <p class="politica__texto">
+            A Mazaro se reserva o direito de recusar devoluções ou reembolsos quando:
+          </p>
+          <ul class="politica__lista">
+            <li>houver indícios de uso;</li>
+            <li>o produto estiver danificado por mau uso;</li>
+            <li>não houver embalagem original;</li>
+            <li>forem identificadas inconsistências na solicitação;</li>
+            <li>os prazos desta política não forem respeitados.</li>
+          </ul>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 10 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">10. Atendimento Oficial</h2>
+          <p class="politica__texto">
+            Todo suporte relacionado a trocas, devoluções e pós-venda é realizado exclusivamente
+            pelo WhatsApp oficial da Mazaro:
+          </p>
+          <div class="politica__destaque">
+            <p><a href="https://wa.me/5548991472902" class="politica__whatsapp" target="_blank" rel="noopener noreferrer">+55 48 99147-2902</a></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Rodapé">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <a href="./index.html" class="footer__logo" aria-label="Mazaro — início">
+          <img src="./assets/icons/logo.png" alt="Mazaro" class="footer__logo-img" width="110" height="36" />
+        </a>
+        <p class="text-sm footer__tagline">Boutique digital de bolsas femininas.</p>
+      </div>
+      <p class="footer__copy text-sm">© 2026 Mazaro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* header.css — Mazaro LP — Liquid Glass refinado */
+
+.header {
+  position: fixed;
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: calc(100% - var(--space-8));
+  max-width: 1160px;
+  border-radius: 9999px;
+  padding-block: var(--space-3);
+  padding-inline: var(--space-6);
+
+  /* Glass */
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.30) 0%,
+    rgba(255, 252, 248, 0.10) 60%
+  );
+  backdrop-filter: blur(10px) saturate(140%) brightness(1.04);
+  -webkit-backdrop-filter: blur(10px) saturate(140%) brightness(1.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.40);
+
+  box-shadow:
+    0 8px 32px rgba(59, 42, 34, 0.10),
+    0 2px 8px  rgba(59, 42, 34, 0.06);
+
+  transition:
+    background      350ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow      350ms cubic-bezier(0.16, 1, 0.3, 1),
+    top             350ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform;
+}
+
+/* Highlight superior — suave, quase invisível */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.18) 35%,
+    rgba(255, 255, 255, 0.18) 65%,
+    transparent
+  );
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+/* Estado scrollado — igual ao inicial, apenas sobe levemente */
+.header--scrolled {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.30) 0%,
+    rgba(255, 252, 248, 0.10) 60%
+  );
+  backdrop-filter: blur(10px) saturate(140%) brightness(1.04);
+  -webkit-backdrop-filter: blur(10px) saturate(140%) brightness(1.04);
+  border-color: rgba(255, 255, 255, 0.40);
+  box-shadow:
+    0 8px 32px rgba(59, 42, 34, 0.10),
+    0 2px 8px  rgba(59, 42, 34, 0.06);
+  top: var(--space-2);
+}
+
+/* ── Nav ── */
+.header__nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* ── Logo ── */
+.header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+.header__logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.header__logo:hover .header__logo-img {
+  opacity: 0.7;
+}
+
+/* ── Links ── */
+.header__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.header__link {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--duration-base) var(--ease-out);
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.header__link:hover {
+  color: var(--color-text-primary);
+}
+
+.header__link--whatsapp {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ── CTA ── */
+.header__cta {
+  flex-shrink: 0;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}

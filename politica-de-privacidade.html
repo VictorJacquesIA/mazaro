@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Política de Privacidade — Mazaro Bolsas" />
+  <title>Política de Privacidade — Mazaro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/variables.css" />
+  <link rel="stylesheet" href="./styles/utilities.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+
+  <style>
+    body {
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-family: var(--font-ui);
+    }
+
+    .politica {
+      padding-block-start: 140px;
+      padding-block-end: var(--space-24);
+    }
+
+    .politica__container {
+      max-width: 760px;
+      margin-inline: auto;
+      padding-inline: var(--space-6);
+    }
+
+    .politica__label {
+      font-family: var(--font-ui);
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+
+    .politica__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-tight);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--color-bg-border);
+    }
+
+    .politica__meta {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-8);
+    }
+
+    .politica__secao {
+      margin-bottom: var(--space-10);
+    }
+
+    .politica__secao-titulo {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__subsecao-titulo {
+      font-family: var(--font-ui);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-2);
+    }
+
+    .politica__texto {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__lista {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__lista li {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-secondary);
+      padding-left: var(--space-5);
+      position: relative;
+    }
+
+    .politica__lista li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .politica__divisor {
+      border: none;
+      border-top: 1px solid var(--color-bg-border);
+      margin-block: var(--space-8);
+    }
+
+    .politica__destaque {
+      background: var(--color-accent-muted);
+      border: 1px solid var(--color-accent-glow);
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-6);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__destaque p {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-primary);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .politica__link {
+      color: var(--color-accent);
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+    }
+
+    .politica__link:hover {
+      text-decoration: underline;
+    }
+
+    /* Tabela */
+    .politica__tabela {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--space-6);
+      font-size: var(--font-size-sm);
+    }
+
+    .politica__tabela th {
+      background: var(--color-bg-secondary);
+      color: var(--color-text-primary);
+      font-weight: var(--font-weight-semibold);
+      padding: var(--space-3) var(--space-4);
+      text-align: left;
+      border-bottom: 2px solid var(--color-bg-border);
+    }
+
+    .politica__tabela td {
+      padding: var(--space-3) var(--space-4);
+      color: var(--color-text-secondary);
+      border-bottom: 1px solid var(--color-bg-border);
+      line-height: var(--leading-relaxed);
+      vertical-align: top;
+    }
+
+    .politica__tabela tr:last-child td {
+      border-bottom: none;
+    }
+
+    .politica__assinatura {
+      margin-top: var(--space-12);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--color-bg-border);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      line-height: var(--leading-relaxed);
+    }
+
+    .politica__voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-ui);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      margin-bottom: var(--space-8);
+      transition: color var(--duration-base) var(--ease-out);
+    }
+
+    .politica__voltar:hover {
+      color: var(--color-accent);
+    }
+
+    @media (max-width: 600px) {
+      .politica__tabela { font-size: var(--font-size-xs); }
+      .politica__tabela th,
+      .politica__tabela td { padding: var(--space-2) var(--space-3); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="header__nav" aria-label="Navegação principal">
+        <a href="./index.html" class="header__logo" aria-label="Mazaro — início">
+          <img src="./assets/icons/logo.png" alt="Mazaro" class="header__logo-img" width="120" height="40" />
+        </a>
+        <a href="./index.html" class="btn btn--primary header__cta">Voltar à loja</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="politica">
+      <div class="politica__container">
+
+        <a href="./index.html" class="politica__voltar">← Voltar</a>
+
+        <span class="politica__label">Mazaro Bolsas</span>
+        <h1 class="politica__titulo">Política de Privacidade</h1>
+        <p class="politica__meta">Última atualização: junho de 2026 · Responsável: Marjana Vezaro · MEI · CNPJ 50.576.242/0001-04</p>
+
+        <!-- 1 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">1. Quem Somos</h2>
+          <p class="politica__texto">
+            A <strong>Mazaro</strong>, nome fantasia de <strong>Marjana Vezaro</strong>, inscrita no CNPJ sob o nº <strong>50.576.242/0001-04</strong>, com sede na Rua Projetada 06, Sala 307, Nova Brasília, Imbituba – SC, é a controladora dos dados pessoais coletados através do site <strong>usemazaro.com.br</strong> e demais canais de atendimento da marca.
+          </p>
+          <div class="politica__destaque">
+            <p>Contato sobre privacidade: <a href="mailto:mazarobolsas@gmail.com" class="politica__link">mazarobolsas@gmail.com</a></p>
+          </div>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 2 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">2. Legislação Aplicável</h2>
+          <p class="politica__texto">Esta Política de Privacidade foi elaborada em conformidade com:</p>
+          <ul class="politica__lista">
+            <li><strong>Lei nº 13.709/2018</strong> — Lei Geral de Proteção de Dados Pessoais (LGPD)</li>
+            <li><strong>Lei nº 8.078/1990</strong> — Código de Defesa do Consumidor (CDC)</li>
+            <li><strong>Lei nº 12.965/2014</strong> — Marco Civil da Internet</li>
+            <li><strong>Decreto nº 11.491/2023</strong> — Regulamentação parcial da LGPD</li>
+          </ul>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 3 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">3. Dados Pessoais que Coletamos</h2>
+
+          <p class="politica__subsecao-titulo">3.1 Dados fornecidos diretamente por você</p>
+          <p class="politica__texto">Ao realizar uma compra, entrar em contato ou navegar pelo site, podemos coletar:</p>
+          <ul class="politica__lista">
+            <li>Nome completo</li>
+            <li>CPF</li>
+            <li>Endereço de entrega completo (logradouro, número, complemento, bairro, cidade, estado, CEP)</li>
+            <li>Endereço de e-mail</li>
+            <li>Número de telefone / WhatsApp</li>
+            <li>Dados de pagamento (processados diretamente pela InfinitePay — não armazenamos dados de cartão)</li>
+          </ul>
+
+          <p class="politica__subsecao-titulo">3.2 Dados coletados automaticamente</p>
+          <p class="politica__texto">Ao acessar o site, coletamos automaticamente:</p>
+          <ul class="politica__lista">
+            <li>Endereço IP</li>
+            <li>Tipo e versão do navegador</li>
+            <li>Sistema operacional</li>
+            <li>Páginas visitadas e tempo de permanência</li>
+            <li>Fonte de acesso (como você chegou ao site)</li>
+            <li>Dados de comportamento de navegação</li>
+            <li>Dados de localização aproximada</li>
+          </ul>
+
+          <p class="politica__subsecao-titulo">3.3 Dados coletados por ferramentas de terceiros</p>
+          <p class="politica__texto"><strong>Google Analytics (Google LLC)</strong><br />
+          Coleta dados de comportamento de navegação para análise de desempenho do site. Processados conforme a política de privacidade do Google: <a href="https://policies.google.com/privacy" class="politica__link" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></p>
+          <p class="politica__texto"><strong>Meta Pixel (Meta Platforms, Inc.)</strong><br />
+          Coleta dados de navegação para mensuração e otimização de campanhas publicitárias no Facebook e Instagram. Processados conforme a política da Meta: <a href="https://facebook.com/policy.php" class="politica__link" target="_blank" rel="noopener noreferrer">facebook.com/policy.php</a></p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 4 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">4. Finalidade do Tratamento dos Dados</h2>
+          <table class="politica__tabela">
+            <thead>
+              <tr>
+                <th>Finalidade</th>
+                <th>Base Legal (LGPD)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Processar e entregar seu pedido</td><td>Execução de contrato — Art. 7º, V</td></tr>
+              <tr><td>Emitir nota fiscal e documentos fiscais</td><td>Cumprimento de obrigação legal — Art. 7º, II</td></tr>
+              <tr><td>Enviar atualizações sobre seu pedido</td><td>Execução de contrato — Art. 7º, V</td></tr>
+              <tr><td>Atendimento ao cliente via WhatsApp</td><td>Execução de contrato — Art. 7º, V</td></tr>
+              <tr><td>Envio de novidades e lançamentos (comunidade)</td><td>Legítimo interesse / Consentimento — Art. 7º, IX e I</td></tr>
+              <tr><td>Análise de desempenho do site (Google Analytics)</td><td>Legítimo interesse — Art. 7º, IX</td></tr>
+              <tr><td>Mensuração de campanhas (Meta Pixel)</td><td>Consentimento — Art. 7º, I</td></tr>
+              <tr><td>Prevenção a fraudes</td><td>Legítimo interesse — Art. 7º, IX</td></tr>
+              <tr><td>Cumprimento de obrigações legais</td><td>Obrigação legal — Art. 7º, II</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 5 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">5. Compartilhamento de Dados</h2>
+          <p class="politica__texto">Seus dados pessoais podem ser compartilhados com:</p>
+
+          <p class="politica__subsecao-titulo">InfinitePay</p>
+          <p class="politica__texto">Plataforma de pagamentos e e-commerce utilizada para processar pedidos e pagamentos. Compartilhamos os dados necessários para a conclusão da compra e emissão de documentos fiscais.</p>
+
+          <p class="politica__subsecao-titulo">Serviços de entrega (Correios e transportadoras)</p>
+          <p class="politica__texto">Compartilhamos nome, endereço e telefone para viabilizar a entrega do pedido.</p>
+
+          <p class="politica__subsecao-titulo">Google LLC</p>
+          <p class="politica__texto">Dados de navegação processados pelo Google Analytics para análise de desempenho.</p>
+
+          <p class="politica__subsecao-titulo">Meta Platforms, Inc.</p>
+          <p class="politica__texto">Dados de navegação processados pelo Meta Pixel para mensuração de campanhas.</p>
+
+          <p class="politica__subsecao-titulo">Autoridades públicas</p>
+          <p class="politica__texto">Quando exigido por lei, ordem judicial ou regulamentação aplicável.</p>
+
+          <div class="politica__destaque">
+            <p>A Mazaro <strong>não vende, aluga ou comercializa</strong> seus dados pessoais para terceiros.</p>
+          </div>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 6 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">6. Cookies</h2>
+          <p class="politica__texto">Utilizamos cookies e tecnologias similares para melhorar sua experiência de navegação.</p>
+
+          <p class="politica__subsecao-titulo">Cookies essenciais</p>
+          <p class="politica__texto">Necessários para o funcionamento básico do site. Não podem ser desativados.</p>
+
+          <p class="politica__subsecao-titulo">Cookies de desempenho (Google Analytics)</p>
+          <p class="politica__texto">Coletam informações sobre como você usa o site para nos ajudar a melhorá-lo. Podem ser desativados sem afetar a navegação.</p>
+
+          <p class="politica__subsecao-titulo">Cookies de publicidade (Meta Pixel)</p>
+          <p class="politica__texto">Utilizados para mensurar a eficácia de nossas campanhas no Facebook e Instagram. Podem ser desativados através das configurações do seu navegador ou da plataforma Meta.</p>
+
+          <p class="politica__subsecao-titulo">Como gerenciar cookies</p>
+          <p class="politica__texto">Você pode configurar seu navegador para recusar cookies ou ser alertado quando cookies estiverem sendo enviados. A desativação de cookies de terceiros não afeta a funcionalidade principal do site.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 7 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">7. Retenção dos Dados</h2>
+          <p class="politica__texto">Mantemos seus dados pelo tempo necessário para cumprir as finalidades descritas nesta política:</p>
+          <ul class="politica__lista">
+            <li>Dados de pedidos e fiscais: 5 anos (obrigação fiscal e tributária)</li>
+            <li>Dados de conta e cadastro: enquanto houver relacionamento ativo</li>
+            <li>Dados de navegação (Analytics): 26 meses (padrão Google)</li>
+            <li>Dados de campanhas (Meta Pixel): conforme política da Meta</li>
+            <li>Dados de atendimento: 2 anos após o último contato</li>
+          </ul>
+          <p class="politica__texto">Após o prazo de retenção, os dados são eliminados ou anonimizados de forma segura.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 8 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">8. Seus Direitos como Titular</h2>
+          <p class="politica__texto">Nos termos do Art. 18 da LGPD, você tem direito a:</p>
+          <ul class="politica__lista">
+            <li>Confirmação da existência de tratamento dos seus dados</li>
+            <li>Acesso aos seus dados pessoais</li>
+            <li>Correção de dados incompletos, inexatos ou desatualizados</li>
+            <li>Anonimização, bloqueio ou eliminação de dados desnecessários</li>
+            <li>Portabilidade dos dados a outro fornecedor de serviço</li>
+            <li>Eliminação dos dados tratados com base no seu consentimento</li>
+            <li>Informação sobre compartilhamento com terceiros</li>
+            <li>Informação sobre a possibilidade de não consentir</li>
+            <li>Revogação do consentimento a qualquer momento</li>
+            <li>Petição à Autoridade Nacional de Proteção de Dados (ANPD)</li>
+          </ul>
+          <div class="politica__destaque">
+            <p>Para exercer qualquer um desses direitos: <a href="mailto:mazarobolsas@gmail.com" class="politica__link">mazarobolsas@gmail.com</a><br />
+            Responderemos em até <strong>15 dias úteis</strong>, conforme prazo estabelecido pela LGPD.</p>
+          </div>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 9 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">9. Segurança dos Dados</h2>
+          <p class="politica__texto">Adotamos medidas técnicas e organizacionais para proteger seus dados pessoais contra acesso não autorizado, perda, alteração ou divulgação indevida, incluindo:</p>
+          <ul class="politica__lista">
+            <li>Conexão segura via protocolo HTTPS/SSL</li>
+            <li>Acesso restrito a dados pessoais</li>
+            <li>Processamento de pagamentos exclusivamente via InfinitePay (PCI DSS compliant)</li>
+            <li>Não armazenamento de dados de cartão de crédito</li>
+          </ul>
+          <p class="politica__texto">Em caso de incidente de segurança que possa acarretar risco ou dano relevante, notificaremos a ANPD e os titulares afetados nos termos do Art. 48 da LGPD.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 10 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">10. Transferência Internacional de Dados</h2>
+          <p class="politica__texto">O Google Analytics e o Meta Pixel podem transferir dados para servidores localizados fora do Brasil, incluindo os Estados Unidos. Essas transferências ocorrem nos termos das políticas de privacidade das respectivas empresas e em conformidade com o Art. 33 da LGPD.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 11 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">11. Menores de Idade</h2>
+          <p class="politica__texto">O site usemazaro.com.br não é direcionado a menores de 18 anos. Não coletamos intencionalmente dados de menores. Caso identifiquemos coleta indevida, eliminaremos os dados imediatamente.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 12 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">12. Alterações desta Política</h2>
+          <p class="politica__texto">Esta Política de Privacidade pode ser atualizada periodicamente. Alterações relevantes serão comunicadas através do site ou por e-mail. A data da última atualização está sempre indicada no topo deste documento. O uso continuado do site após alterações implica na aceitação da política atualizada.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 13 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">13. Contato e Encarregado de Dados (DPO)</h2>
+          <div class="politica__destaque">
+            <p>
+              <strong>Responsável pelo tratamento de dados:</strong><br />
+              Marjana Vezaro · Mazaro<br />
+              Rua Projetada 06, Sala 307, Nova Brasília, Imbituba – SC · CEP 88780-000<br />
+              CNPJ: 50.576.242/0001-04<br />
+              <a href="mailto:mazarobolsas@gmail.com" class="politica__link">mazarobolsas@gmail.com</a>
+            </p>
+          </div>
+          <p class="politica__texto"><strong>Autoridade Nacional de Proteção de Dados (ANPD):</strong><br />
+          <a href="https://www.gov.br/anpd" class="politica__link" target="_blank" rel="noopener noreferrer">gov.br/anpd</a></p>
+        </div>
+
+        <div class="politica__assinatura">
+          <p>Marjana Vezaro · Mazaro<br />
+          CNPJ: 50.576.242/0001-04<br />
+          Rua Projetada 06, Sala 307, Nova Brasília, Imbituba – SC · CEP 88780-000<br />
+          Imbituba – SC · Junho de 2026</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Rodapé">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <a href="./index.html" class="footer__logo" aria-label="Mazaro — início">
+          <img src="./assets/icons/logo.png" alt="Mazaro" class="footer__logo-img" width="110" height="36" />
+        </a>
+        <p class="text-sm footer__tagline">Mazaro · Elegância acessível, todos os dias.</p>
+      </div>
+      <p class="footer__copy text-sm">© 2026 Mazaro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

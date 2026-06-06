@@ -1,0 +1,79 @@
+/* hero.css — Mazaro LP */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--gradient-hero);
+  padding-block-start: 140px; /* espaço do header pill flutuante */
+  padding-block-end: var(--space-32);
+  position: relative;
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: var(--space-12);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Conteúdo texto ── */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  will-change: transform, opacity;
+}
+
+.hero__badge {
+  align-self: flex-start;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+.hero__title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.hero__subtitle {
+  max-width: 480px;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: var(--leading-relaxed);
+  text-align: left;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+
+/* ── Imagem ── */
+.hero__image {
+  position: relative;
+  will-change: transform, opacity;
+  margin-top: var(--space-8);
+}
+
+.hero__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5/4;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  display: block;
+}

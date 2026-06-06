@@ -1,0 +1,212 @@
+/* utilities.css — Mazaro LP */
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+/* ── Seção base ── */
+.section {
+  padding-block: var(--section-padding-y);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Tipografia utilitária ── */
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+.text-h1 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+.text-h2 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-snug);
+  color: var(--color-text-primary);
+}
+
+.text-h3 {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-primary);
+}
+
+.text-body {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+.text-sm {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ── Botões — Liquid Glass ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-radius: 9999px;
+  font-family: var(--font-ui);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-wide);
+  padding: var(--space-4) var(--space-8);
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  transition:
+    transform     300ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow    300ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter        300ms cubic-bezier(0.16, 1, 0.3, 1),
+    background    300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn::before {
+  display: none;
+}
+
+.btn > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Primary — caramelo glass refinado ── */
+.btn--primary {
+  background: rgba(183, 122, 72, 0.92);
+  color: #F8F4EE;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 4px 14px rgba(183, 122, 72, 0.28),
+    0 1px 3px  rgba(183, 122, 72, 0.18);
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  background: rgba(154, 100, 56, 0.95);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.30),
+    0 6px 20px rgba(183, 122, 72, 0.35),
+    0 2px 6px  rgba(183, 122, 72, 0.22);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+/* ── Secondary — vidro translúcido refinado ── */
+.btn--secondary {
+  background: rgba(248, 244, 238, 0.50);
+  color: var(--color-text-primary);
+  border: 1px solid rgba(59, 42, 34, 0.14);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.60),
+    0 2px 8px rgba(59, 42, 34, 0.06);
+}
+
+.btn--secondary:hover {
+  transform: translateY(-1px);
+  background: rgba(248, 244, 238, 0.72);
+  border-color: rgba(183, 122, 72, 0.30);
+  color: var(--color-accent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 4px 14px rgba(59, 42, 34, 0.08);
+}
+
+.btn--secondary:active {
+  transform: translateY(0);
+}
+
+/* ── Tag de ocasião ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-accent-muted);
+  border: 1px solid var(--color-accent-glow);
+  color: var(--color-accent);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+/* ── Selo de curadoria ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--color-bg-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+/* ── Separador ── */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--color-bg-border);
+  margin-block: var(--space-8);
+}
+
+/* ── Utilitários de visibilidade ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Seção título (label + heading) ── */
+.section-label {
+  font-family: var(--font-ui);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}

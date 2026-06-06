@@ -1,0 +1,22 @@
+/* animations.css — Mazaro LP — animações CSS de suporte */
+
+/* Estado inicial para elementos animados por GSAP */
+[data-scene-element],
+[data-animate] {
+  will-change: transform, opacity;
+}
+
+/* Seções com data-scene — visibilidade garantida sem JS */
+@media (prefers-reduced-motion: reduce) {
+  [data-scene-element],
+  [data-animate],
+  [data-text-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Hover nos cards de produto — imagem zoom */
+.product-card__image-wrap {
+  overflow: hidden;
+}

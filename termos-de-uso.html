@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Termos de Uso — Mazaro Bolsas" />
+  <title>Termos de Uso — Mazaro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/variables.css" />
+  <link rel="stylesheet" href="./styles/utilities.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/footer.css" />
+
+  <style>
+    body {
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-family: var(--font-ui);
+    }
+
+    .politica {
+      padding-block-start: 140px;
+      padding-block-end: var(--space-24);
+    }
+
+    .politica__container {
+      max-width: 760px;
+      margin-inline: auto;
+      padding-inline: var(--space-6);
+    }
+
+    .politica__label {
+      font-family: var(--font-ui);
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+
+    .politica__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-tight);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--color-bg-border);
+    }
+
+    .politica__meta {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-8);
+    }
+
+    .politica__secao {
+      margin-bottom: var(--space-10);
+    }
+
+    .politica__secao-titulo {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__subsecao-titulo {
+      font-family: var(--font-ui);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-2);
+    }
+
+    .politica__texto {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__lista {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__lista li {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-secondary);
+      padding-left: var(--space-5);
+      position: relative;
+    }
+
+    .politica__lista li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .politica__divisor {
+      border: none;
+      border-top: 1px solid var(--color-bg-border);
+      margin-block: var(--space-8);
+    }
+
+    .politica__destaque {
+      background: var(--color-accent-muted);
+      border: 1px solid var(--color-accent-glow);
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-6);
+      margin-bottom: var(--space-4);
+    }
+
+    .politica__destaque p {
+      font-size: var(--font-size-body);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-primary);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .politica__whatsapp {
+      color: var(--color-accent);
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+    }
+
+    .politica__whatsapp:hover {
+      text-decoration: underline;
+    }
+
+    .politica__assinatura {
+      margin-top: var(--space-12);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--color-bg-border);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      line-height: var(--leading-relaxed);
+    }
+
+    .politica__voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-ui);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      margin-bottom: var(--space-8);
+      transition: color var(--duration-base) var(--ease-out);
+    }
+
+    .politica__voltar:hover {
+      color: var(--color-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="header__nav" aria-label="Navegação principal">
+        <a href="./index.html" class="header__logo" aria-label="Mazaro — início">
+          <img src="./assets/icons/logo.png" alt="Mazaro" class="header__logo-img" width="120" height="40" />
+        </a>
+        <a href="./index.html" class="btn btn--primary header__cta">
+          Voltar à loja
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="politica">
+      <div class="politica__container">
+
+        <a href="./index.html" class="politica__voltar">← Voltar</a>
+
+        <span class="politica__label">Mazaro Bolsas</span>
+        <h1 class="politica__titulo">Termos de Uso</h1>
+        <p class="politica__meta">Última atualização: junho de 2026 · Responsável: Marjana Vezaro · MEI · CNPJ 50.576.242/0001-04</p>
+
+        <!-- 1 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">1. Identificação</h2>
+          <p class="politica__texto">
+            O site <strong>usemazaro.com.br</strong> é operado por <strong>Marjana Vezaro</strong>, MEI inscrita no CNPJ sob o nº <strong>50.576.242/0001-04</strong>, com sede na Rua Projetada 06, Sala 307, Nova Brasília, Imbituba – SC, CEP 88780-000, doravante denominada <strong>Mazaro</strong>.
+          </p>
+          <div class="politica__destaque">
+            <p>Contato: <a href="mailto:mazarobolsas@gmail.com" class="politica__whatsapp">mazarobolsas@gmail.com</a><br />
+            WhatsApp: <a href="https://wa.me/5548991472902" class="politica__whatsapp" target="_blank" rel="noopener noreferrer">+55 48 99147-2902</a></p>
+          </div>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 2 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">2. Aceitação dos Termos</h2>
+          <p class="politica__texto">
+            Ao acessar, navegar ou realizar compras no site usemazaro.com.br, você declara que leu, compreendeu e concorda com estes Termos de Uso em sua totalidade. Caso não concorde com qualquer disposição, solicitamos que não utilize o site.
+          </p>
+          <p class="politica__texto">Estes Termos de Uso são regidos pela legislação brasileira, especialmente:</p>
+          <ul class="politica__lista">
+            <li><strong>Lei nº 8.078/1990</strong> — Código de Defesa do Consumidor (CDC)</li>
+            <li><strong>Lei nº 12.965/2014</strong> — Marco Civil da Internet</li>
+            <li><strong>Lei nº 13.709/2018</strong> — Lei Geral de Proteção de Dados (LGPD)</li>
+            <li><strong>Decreto nº 7.962/2013</strong> — Regulamentação do comércio eletrônico</li>
+          </ul>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 3 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">3. Produtos e Disponibilidade</h2>
+          <p class="politica__subsecao-titulo">3.1 Descrição dos produtos</p>
+          <p class="politica__texto">
+            A Mazaro é uma boutique digital de acessórios femininos. Todos os produtos disponíveis no site são descritos com suas principais características, incluindo materiais, dimensões e ocasiões de uso. Nos esforçamos para garantir que as imagens representem fielmente os produtos. No entanto, variações de cor podem ocorrer em função das configurações de tela de cada dispositivo.
+          </p>
+          <p class="politica__subsecao-titulo">3.2 Disponibilidade de estoque</p>
+          <p class="politica__texto">
+            A disponibilidade dos produtos é atualizada regularmente. Em caso de indisponibilidade após a confirmação do pedido, a Mazaro entrará em contato em até <strong>2 dias úteis</strong> para oferecer:
+          </p>
+          <ul class="politica__lista">
+            <li>Produto substituto equivalente</li>
+            <li>Crédito para compra futura</li>
+            <li>Reembolso integral</li>
+          </ul>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 4 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">4. Pedidos e Pagamentos</h2>
+          <p class="politica__subsecao-titulo">4.1 Realização do pedido</p>
+          <p class="politica__texto">
+            Os pedidos são processados exclusivamente através da plataforma <strong>InfinitePay</strong>, parceira da Mazaro para operações de e-commerce. Ao finalizar a compra, você será direcionado ao ambiente seguro da InfinitePay.
+          </p>
+          <p class="politica__subsecao-titulo">4.2 Formas de pagamento</p>
+          <ul class="politica__lista">
+            <li>Cartão de crédito (parcelamento conforme condições vigentes)</li>
+            <li>Cartão de débito</li>
+            <li>PIX</li>
+            <li>Boleto bancário</li>
+          </ul>
+          <p class="politica__subsecao-titulo">4.3 Confirmação do pedido</p>
+          <p class="politica__texto">
+            Após a confirmação do pagamento, você receberá uma notificação via e-mail ou WhatsApp com os dados do pedido. O contrato de compra e venda considera-se celebrado neste momento.
+          </p>
+          <p class="politica__subsecao-titulo">4.4 Cancelamento pelo consumidor</p>
+          <p class="politica__texto">
+            Nos termos do <strong>Art. 49 do CDC</strong>, você tem direito ao arrependimento e pode cancelar a compra em até <strong>7 (sete) dias corridos</strong> a partir do recebimento do produto, sem necessidade de justificativa.
+          </p>
+          <div class="politica__destaque">
+            <p>Para exercer esse direito, entre em contato pelo WhatsApp oficial: <a href="https://wa.me/5548991472902" class="politica__whatsapp" target="_blank" rel="noopener noreferrer">+55 48 99147-2902</a></p>
+          </div>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 5 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">5. Frete e Entrega</h2>
+          <p class="politica__subsecao-titulo">5.1 Abrangência</p>
+          <p class="politica__texto">A Mazaro realiza entregas para todo o território nacional.</p>
+          <p class="politica__subsecao-titulo">5.2 Prazos de entrega</p>
+          <p class="politica__texto">Os prazos são estimados a partir da confirmação do pagamento:</p>
+          <ul class="politica__lista">
+            <li>Regiões Sul e Sudeste: 3 a 7 dias úteis</li>
+            <li>Demais regiões: 5 a 15 dias úteis</li>
+          </ul>
+          <p class="politica__texto">Prazos podem variar em períodos de alta demanda ou por fatores externos (greves, condições climáticas, etc.).</p>
+          <p class="politica__subsecao-titulo">5.3 Rastreamento</p>
+          <p class="politica__texto">O código de rastreamento será enviado após a postagem do pedido via e-mail ou WhatsApp.</p>
+          <p class="politica__subsecao-titulo">5.4 Não recebimento</p>
+          <p class="politica__texto">Em caso de não recebimento dentro do prazo estimado, entre em contato através dos canais de atendimento. Pedidos devolvidos por ausência do destinatário poderão ser reenviados mediante novo pagamento de frete ou reembolsados conforme preferência do cliente.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 6 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">6. Trocas e Devoluções</h2>
+          <p class="politica__texto">Nossa política de trocas e devoluções segue o Código de Defesa do Consumidor Brasileiro. Para detalhes completos, consulte nossa <a href="./politica-de-trocas.html" class="politica__whatsapp">Política de Trocas e Devoluções</a>.</p>
+
+          <p class="politica__subsecao-titulo">6.1 Direito de arrependimento</p>
+          <p class="politica__texto">Compras online podem ser canceladas em até <strong>7 (sete) dias corridos</strong> após o recebimento, sem necessidade de justificativa (Art. 49 do CDC).</p>
+
+          <p class="politica__subsecao-titulo">6.2 Produtos com defeito</p>
+          <p class="politica__texto">Produtos duráveis possuem garantia legal de até <strong>90 (noventa) dias</strong> (Art. 26 do CDC). Em caso de defeito, entre em contato pelo WhatsApp oficial com número do pedido, fotos/vídeos e descrição do ocorrido.</p>
+
+          <p class="politica__subsecao-titulo">6.3 Atendimento para devoluções</p>
+          <div class="politica__destaque">
+            <p>WhatsApp: <a href="https://wa.me/5548991472902" class="politica__whatsapp" target="_blank" rel="noopener noreferrer">+55 48 99147-2902</a></p>
+          </div>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 7 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">7. Propriedade Intelectual</h2>
+          <p class="politica__texto">Todo o conteúdo disponível no site usemazaro.com.br, incluindo textos, imagens, fotografias, logotipos, identidade visual, layout e design, é de propriedade exclusiva da Mazaro ou licenciado para uso pela marca.</p>
+          <p class="politica__texto">É expressamente proibido:</p>
+          <ul class="politica__lista">
+            <li>Reproduzir, copiar ou distribuir o conteúdo do site sem autorização</li>
+            <li>Utilizar a marca Mazaro sem autorização prévia e por escrito</li>
+            <li>Usar imagens dos produtos para fins comerciais sem autorização</li>
+          </ul>
+          <p class="politica__texto">Violações serão tratadas nos termos da <strong>Lei nº 9.610/1998</strong> (Lei de Direitos Autorais) e da <strong>Lei nº 9.279/1996</strong> (Lei de Propriedade Industrial).</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 8 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">8. Responsabilidades</h2>
+          <p class="politica__subsecao-titulo">8.1 Responsabilidades da Mazaro</p>
+          <ul class="politica__lista">
+            <li>Manter as informações do site atualizadas e precisas</li>
+            <li>Processar pedidos dentro dos prazos informados</li>
+            <li>Proteger os dados pessoais dos clientes</li>
+            <li>Garantir a qualidade dos produtos comercializados</li>
+            <li>Prestar atendimento ao cliente de forma ágil e transparente</li>
+          </ul>
+          <p class="politica__subsecao-titulo">8.2 Limitações de responsabilidade</p>
+          <p class="politica__texto">A Mazaro não se responsabiliza por:</p>
+          <ul class="politica__lista">
+            <li>Atrasos decorrentes de força maior ou caso fortuito</li>
+            <li>Falhas em serviços de terceiros (transportadoras, meios de pagamento)</li>
+            <li>Uso indevido do produto pelo consumidor após a entrega</li>
+            <li>Danos indiretos decorrentes da indisponibilidade temporária do site</li>
+          </ul>
+          <p class="politica__subsecao-titulo">8.3 Responsabilidades do usuário</p>
+          <ul class="politica__lista">
+            <li>Fornecer informações verdadeiras e atualizadas no cadastro</li>
+            <li>Manter a confidencialidade de seus dados de acesso</li>
+            <li>Não utilizar o site para fins ilícitos ou fraudulentos</li>
+            <li>Não realizar pedidos com intenção de causar prejuízo à Mazaro</li>
+          </ul>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 9 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">9. Atendimento ao Cliente</h2>
+          <p class="politica__texto">Todo suporte relacionado a pedidos, trocas, devoluções e pós-venda é realizado exclusivamente pelo WhatsApp oficial da Mazaro:</p>
+          <div class="politica__destaque">
+            <p>
+              WhatsApp: <a href="https://wa.me/5548991472902" class="politica__whatsapp" target="_blank" rel="noopener noreferrer">+55 48 99147-2902</a><br />
+              E-mail: <a href="mailto:mazarobolsas@gmail.com" class="politica__whatsapp">mazarobolsas@gmail.com</a><br />
+              Horário: segunda a sexta, das 9h às 18h
+            </p>
+          </div>
+          <p class="politica__texto">O prazo de resposta é de até <strong>2 dias úteis</strong>.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 10 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">10. PROCON e Órgãos de Defesa do Consumidor</h2>
+          <p class="politica__texto">Caso não seja possível resolver sua demanda diretamente com a Mazaro, você pode recorrer a:</p>
+          <ul class="politica__lista">
+            <li>PROCON do seu estado</li>
+            <li>Portal do Consumidor: <a href="https://consumidor.gov.br" class="politica__whatsapp" target="_blank" rel="noopener noreferrer">consumidor.gov.br</a></li>
+            <li>Juizado Especial Cível (JEC) — causas até 40 salários mínimos</li>
+          </ul>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 11 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">11. Alterações dos Termos</h2>
+          <p class="politica__texto">A Mazaro reserva-se o direito de alterar estes Termos de Uso a qualquer momento. Alterações relevantes serão comunicadas com antecedência mínima de <strong>10 dias</strong> através do site ou por e-mail. O uso continuado do site após as alterações implica na aceitação dos novos termos.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 12 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">12. Foro e Legislação Aplicável</h2>
+          <p class="politica__texto">Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da Comarca de <strong>Imbituba – SC</strong> para dirimir quaisquer controvérsias decorrentes destes Termos, sem prejuízo do direito do consumidor de optar pelo foro de seu domicílio, conforme facultado pelo <strong>Art. 101, inciso I, do CDC</strong>.</p>
+        </div>
+
+        <hr class="politica__divisor" />
+
+        <!-- 13 -->
+        <div class="politica__secao">
+          <h2 class="politica__secao-titulo">13. Disposições Gerais</h2>
+          <p class="politica__texto">A invalidade ou inaplicabilidade de qualquer cláusula destes Termos não afeta a validade das demais disposições. A tolerância da Mazaro em relação a qualquer descumprimento não implica renúncia ao direito de exigir o cumprimento no futuro.</p>
+        </div>
+
+        <div class="politica__assinatura">
+          <p>Marjana Vezaro · Mazaro<br />
+          CNPJ: 50.576.242/0001-04<br />
+          Rua Projetada 06, Sala 307, Nova Brasília, Imbituba – SC · CEP 88780-000<br />
+          Imbituba – SC · Junho de 2026</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Rodapé">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <a href="./index.html" class="footer__logo" aria-label="Mazaro — início">
+          <img src="./assets/icons/logo.png" alt="Mazaro" class="footer__logo-img" width="110" height="36" />
+        </a>
+        <p class="text-sm footer__tagline">Mazaro · Elegância acessível, todos os dias.</p>
+      </div>
+      <p class="footer__copy text-sm">© 2026 Mazaro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

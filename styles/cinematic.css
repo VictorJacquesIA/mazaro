@@ -1,0 +1,138 @@
+/* cinematic.css — Mazaro LP — efeitos visuais cinematográficos */
+
+/* ── Aurora de fundo ── */
+.aurora {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.aurora__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: aurora-breathe 8s ease-in-out infinite alternate;
+}
+
+.aurora__orb--1 {
+  width: 60vw;
+  height: 60vw;
+  top: -20%;
+  left: -10%;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+  opacity: 0.12;
+}
+
+.aurora__orb--2 {
+  width: 40vw;
+  height: 40vw;
+  bottom: -10%;
+  right: -5%;
+  background: radial-gradient(circle, var(--color-accent-2) 0%, transparent 70%);
+  opacity: 0.08;
+  animation-delay: -4s;
+}
+
+@keyframes aurora-breathe {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.15) translate(2%, 3%); }
+}
+
+/* ── Grade de fundo ── */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-size: 60px 60px;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-text-primary) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-text-primary) 4%, transparent) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+/* ── Texto gigante decorativo de fundo ── */
+.bg-text {
+  font-size: clamp(8rem, 20vw, 22rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--color-text-primary) 5%, transparent);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ── Word reveal — suporte ao text reveal do GSAP ── */
+.word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.word__inner {
+  display: inline-block;
+}
+
+/* ── Glass card ── */
+.glass-card {
+  background: color-mix(in srgb, var(--color-bg-elevated) 60%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in srgb, var(--color-text-primary) 8%, transparent);
+  border-radius: var(--radius-xl);
+  transition: all var(--duration-slow) var(--ease-out);
+}
+
+.glass-card:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  box-shadow: 0 20px 40px -10px color-mix(in srgb, var(--color-accent) 12%, transparent);
+  transform: translateY(-4px);
+}
+
+/* ── Marquee ── */
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Magnetic button — suporte ao initMagnetic() ── */
+.magnetic {
+  display: inline-flex;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ── Cursor glow ── */
+[data-cursor-glow] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
