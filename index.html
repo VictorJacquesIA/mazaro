@@ -215,22 +215,24 @@
 
         <script type="module">
           import { getProducts } from './js/products.js'
-          const grid = document.getElementById('vitrine-grid')
-          const products = await getProducts()
-          products.forEach(p => {
-            grid.innerHTML += `
-              <article class="product-card" data-scene-element>
-                <div class="product-card__image-wrap">
-                  <img src="${p.img}" alt="${p.alt}" loading="lazy" width="400" height="500" />
-                  <span class="tag product-card__tag">${p.tag}</span>
-                </div>
-                <div class="product-card__body">
-                  <h3 class="text-h3">${p.title}</h3>
-                  <p class="text-sm">${p.desc}</p>
-                  <a href="${p.link}" class="btn btn--secondary product-card__cta" target="_blank" rel="noopener noreferrer">Ver no site</a>
-                </div>
-              </article>`
-          })
+          ;(async () => {
+            const grid = document.getElementById('vitrine-grid')
+            const products = await getProducts()
+            products.forEach(p => {
+              grid.innerHTML += `
+                <article class="product-card" data-scene-element>
+                  <div class="product-card__image-wrap">
+                    <img src="${p.img}" alt="${p.alt}" loading="lazy" width="400" height="500" />
+                    <span class="tag product-card__tag">${p.tag}</span>
+                  </div>
+                  <div class="product-card__body">
+                    <h3 class="text-h3">${p.title}</h3>
+                    <p class="text-sm">${p.desc}</p>
+                    <a href="${p.link}" class="btn btn--secondary product-card__cta" target="_blank" rel="noopener noreferrer">Ver no site</a>
+                  </div>
+                </article>`
+            })
+          })()
         </script>
 
         <div class="vitrine__cta-wrap" data-scene-element>
