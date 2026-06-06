@@ -216,7 +216,8 @@
         <script type="module">
           import { getProducts } from './js/products.js'
           const grid = document.getElementById('vitrine-grid')
-          getProducts().forEach(p => {
+          const products = await getProducts()
+          products.forEach(p => {
             grid.innerHTML += `
               <article class="product-card" data-scene-element>
                 <div class="product-card__image-wrap">

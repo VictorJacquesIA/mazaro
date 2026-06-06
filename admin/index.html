@@ -395,10 +395,11 @@
       document.getElementById('admin-screen').style.display = 'none'
     }
 
-    function showAdmin() {
+    async function showAdmin() {
       document.getElementById('login-screen').style.display = 'none'
       document.getElementById('admin-screen').style.display = 'block'
-      products = getProducts()
+      document.getElementById('products-grid').innerHTML = '<p style="color:var(--color-text-secondary);padding:1rem">Carregando produtos...</p>'
+      products = await getProducts()
       renderForms()
     }
 
@@ -466,7 +467,11 @@
     }
 
     // ── Salvar ──
-    window.doSave = function() {
+    window.doSave = async function() {
+      const btn = document.querySelector('.btn-primary')
+      btn.textContent = 'Salvando...'
+      btn.disabled = true
+
       products = products.map((p, i) => ({
         ...p,
         tag: document.getElementById(`tag-${i}`).value.trim(),
@@ -475,29 +480,45 @@
         link: document.getElementById(`link-${i}`).value.trim(),
         alt: document.getElementById(`title-${i}`).value.trim() + ' — Mazaro'
       }))
-      saveProducts(products)
-      showToast('Alterações salvas!')
+
+      try {
+        await saveProducts(products)
+        showToast('Alterações salvas!')
+      } catch (err) {
+        showToast('Erro ao salvar: ' + err.message)
+      } finally {
+        btn.textContent = 'Salvar alterações'
+        btn.disabled = false
+      }
     }
 
     // ── Resetar ──
-    window.doReset = function() {
+    window.doReset = async function() {
       if (!confirm('Resetar para os produtos padrão? Imagens e links salvos serão perdidos.')) return
-      resetProducts()
-      products = [...DEFAULT_PRODUCTS]
-      renderForms()
-      showToast('Resetado para o padrão.')
+      try {
+        await resetProducts()
+        products = [...DEFAULT_PRODUCTS]
+        renderForms()
+        showToast('Resetado para o padrão.')
+      } catch (err) {
+        showToast('Erro ao resetar: ' + err.message)
+      }
     }
 
     // ── Sincronizar textos — mantém img e link, atualiza title/tag/desc ──
-    window.doSyncTexts = function() {
+    window.doSyncTexts = async function() {
       if (!confirm('Atualizar nomes, tags e descrições com os textos mais recentes? Imagens e links salvos serão mantidos.')) return
       products = products.map((p, i) => {
         const def = DEFAULT_PRODUCTS[i]
         return def ? { ...p, title: def.title, tag: def.tag, desc: def.desc, alt: def.alt } : p
       })
-      saveProducts(products)
-      renderForms()
-      showToast('Textos sincronizados com sucesso!')
+      try {
+        await saveProducts(products)
+        renderForms()
+        showToast('Textos sincronizados com sucesso!')
+      } catch (err) {
+        showToast('Erro ao sincronizar: ' + err.message)
+      }
     }
 
     // ── Toast ──

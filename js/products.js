@@ -1,3 +1,5 @@
+import { supabase } from './supabase.js'
+
 export const DEFAULT_PRODUCTS = [
   {
     id: 1,
@@ -37,19 +39,48 @@ export const DEFAULT_PRODUCTS = [
   }
 ]
 
-export function getProducts() {
+export async function getProducts() {
   try {
-    const saved = localStorage.getItem('mazaro_products')
-    return saved ? JSON.parse(saved) : DEFAULT_PRODUCTS
+    const { data, error } = await supabase
+      .from('produtos')
+      .select('*')
+      .order('ordem', { ascending: true })
+
+    if (error || !data || data.length === 0) return DEFAULT_PRODUCTS
+
+    return data.map(p => ({
+      id: p.id,
+      tag: p.tag,
+      title: p.title,
+      desc: p.descricao,
+      img: p.img,
+      alt: p.alt,
+      link: p.link
+    }))
   } catch {
     return DEFAULT_PRODUCTS
   }
 }
 
-export function saveProducts(products) {
-  localStorage.setItem('mazaro_products', JSON.stringify(products))
+export async function saveProducts(products) {
+  const rows = products.map((p, i) => ({
+    id: p.id,
+    tag: p.tag,
+    title: p.title,
+    descricao: p.desc,
+    img: p.img,
+    alt: p.alt,
+    link: p.link,
+    ordem: i + 1
+  }))
+
+  const { error } = await supabase
+    .from('produtos')
+    .upsert(rows, { onConflict: 'id' })
+
+  if (error) throw error
 }
 
-export function resetProducts() {
-  localStorage.removeItem('mazaro_products')
+export async function resetProducts() {
+  await saveProducts(DEFAULT_PRODUCTS)
 }
