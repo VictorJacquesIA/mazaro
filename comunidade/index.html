@@ -19,7 +19,6 @@
 
   <!-- ══════════════════════════════════════════════
        META PIXEL
-       Substituir {PIXEL_ID} pelo ID real do Pixel
   ══════════════════════════════════════════════ -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -31,15 +30,12 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
 
-    var PIXEL_ID = '{TODO: PIXEL_ID}'; // ← substituir pelo ID do Pixel Meta
-    if (PIXEL_ID && PIXEL_ID !== '{TODO: PIXEL_ID}') {
+    var PIXEL_ID = '%VITE_META_PIXEL_ID%';
+    if (PIXEL_ID) {
       fbq('init', PIXEL_ID);
       fbq('track', 'PageView');
     }
   </script>
-  <noscript>
-    <!-- substituir {PIXEL_ID} abaixo também -->
-  </noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -213,6 +209,7 @@
   </style>
 </head>
 <body>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=%VITE_META_PIXEL_ID%&ev=PageView&noscript=1" /></noscript>
 
   <div class="page">
 
