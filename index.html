@@ -20,7 +20,7 @@
   <meta property="og:description" content="Bolsas femininas escolhidas com critério. Elegância acessível para a sua rotina real." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://usemazaro.com.br/" />
-  <meta property="og:image" content="https://usemazaro.com.br/assets/images/og-image.jpg" />
+  <meta property="og:image" content="https://usemazaro.com.br/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Mazaro" />
@@ -30,7 +30,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mazaro — Bolsas Femininas" />
   <meta name="twitter:description" content="Bolsas femininas escolhidas com critério. Elegância acessível para a sua rotina real." />
-  <meta name="twitter:image" content="https://usemazaro.com.br/assets/images/og-image.jpg" />
+  <meta name="twitter:image" content="https://usemazaro.com.br/og-image.jpg" />
 
   <!-- ══ Schema.org ════════════════════════════════════════════════════════ -->
   <script type="application/ld+json">
@@ -65,8 +65,8 @@
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    window.__META_PIXEL_ID = '__VITE_META_PIXEL_ID__';
-    if (window.__META_PIXEL_ID && window.__META_PIXEL_ID !== '__VITE_META_PIXEL_ID__') {
+    window.__META_PIXEL_ID = '%VITE_META_PIXEL_ID%';
+    if (window.__META_PIXEL_ID) {
       fbq('init', window.__META_PIXEL_ID);
       fbq('track', 'PageView');
     }
@@ -74,8 +74,8 @@
   <!-- ══ Google Analytics 4 ════════════════════════════════════════════════ -->
   <!-- {TODO: inserir o ID do GA4 em VITE_GA_MEASUREMENT_ID no arquivo .env — Ex: G-XXXXXXXXXX} -->
   <script>
-    window.__GA_ID = '__VITE_GA_MEASUREMENT_ID__';
-    if (window.__GA_ID && window.__GA_ID !== '__VITE_GA_MEASUREMENT_ID__') {
+    window.__GA_ID = '%VITE_GA_MEASUREMENT_ID%';
+    if (window.__GA_ID) {
       var s = document.createElement('script');
       s.async = true;
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.__GA_ID;
