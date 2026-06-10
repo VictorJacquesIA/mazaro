@@ -8,9 +8,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main:       resolve(__dirname, 'index.html'),
-        comunidade: resolve(__dirname, 'comunidade/index.html'),
-        admin:      resolve(__dirname, 'admin/index.html'),
+        main:                resolve(__dirname, 'index.html'),
+        comunidade:          resolve(__dirname, 'comunidade/index.html'),
+        admin:               resolve(__dirname, 'admin/index.html'),
+        politicaTrocas:      resolve(__dirname, 'politica-de-trocas.html'),
+        politicaPrivacidade: resolve(__dirname, 'politica-de-privacidade.html'),
+        termosDeUso:         resolve(__dirname, 'termos-de-uso.html'),
       }
     }
   }
